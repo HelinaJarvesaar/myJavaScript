@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap');
+
+:root {
+    --primary-color-text: #BFA9A0;
+    --primary-color-headlines: #3D4677;
+    --primary-color-accent: #DB7559;
+    --primary-color-background: #fffefd;
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    overflow: hidden; /* peidab ära mis väljaspool erkaani, praegu menüü list*/
+}
+
+.menu {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.hamburger {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid var(--primary-color-accent);
+    border-radius: 10px;
+    justify-self: right;
+    /*viib hamburgeri paremale serva*/
+}
+
+.line {
+    width: 35px;
+    height: 4px;
+    background-color: var(--primary-color-accent);
+    margin: 6px;
+}
+
+
+
+
+.menu-panel {
+    position: absolute;
+    /*nüüd ei ole menüül kindlat asukohta*/
+    right: -244px;
+    /*menüü läheb paremale lehest välja*/
+    top: 0;
+    /*menüü läheb lehe ülaserva*/
+    width: 244px;
+    height: 476px;
+    background-color: #BFA9A0;
+    font-size: 24px;
+    text-align: center;
+    box-sizing: border-box;
+    /*et padding kasti suuremaks ei teeks*/
+    padding: 122px 33px 79px 33px;
+    transition: right 0.3s ease-in-out;
+}
+
+.menu-panel ul {
+    list-style: none;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+.menu-panel ul li {
+    margin-bottom: 34px;
+}
+
+.menu-panel ul li a {
+    text-decoration: none;
+    color: #3D4677;
+}
+
+.menu-panel.active {
+    /* kui elemendil on 2 klassi, siis valin nii et .active EES TÜHIKUT EI OLE*/
+    right: 0;
+    /* kui active, siis tuleb menuu paremale lehe serva nähtavale*/
+}
+
+
+
+.frame {
+    width: 100%;
+    /* anname laiuse, et saaks pärast muuta*/
+    text-align: center;
+    /* kohtleb ka pilti tekstina*/
+}
+
+.frame img {
+    display: inline-block;
+    /*kui img on inline, siis ei saa ülalt, alt kauguseid muuta, 
+    kui teeme inline-block, siis saame*/
+    width: 274px;
+    height: 160px;
+    object-fit: cover;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
