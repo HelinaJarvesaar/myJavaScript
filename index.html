@@ -20,7 +20,7 @@
                 <div class="line"></div>
             </div>
 
-            <div class="menu-panel active">
+            <div class="menu-panel">
 
                 <img id="x" src="img/Vector.svg" alt="x">
 
@@ -42,6 +42,46 @@
             </div>
         </div>
 
+    </div>
+
+    <hr>
+
+
+    <div class="btn-wrapper">
+        <button id="btn-open-form">Open Form (Modal)</button>
+    </div>
+
+    <div class="modal">
+        <div class="contact">
+            <div class="contact-form">
+                <form action="#" id="contact-form">
+                    <div class="label">
+                        <label for="name">Name:</label>
+                    </div>
+                    <div class="form-input">
+                        <input type="text" id="name" required>
+                    </div>
+
+                    <div class="label">
+                        <label for="email">Email:</labe>
+                    </div>
+                    <div class="form-input">
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="label">
+                        <label for="text-area">Message:</label>
+                    </div>
+                    <div class="text-area">
+                        <textarea name="message" id="message" rows="10" required></textarea>
+                    </div>
+
+                    <div class="btn-form">
+                        <button type="submit">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
     <script src="app.js"></script>

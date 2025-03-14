@@ -38,7 +38,7 @@ menuLinks.forEach((link) => { // käime läbi kõik lingid mis asuvad menuLinks 
 
 const closeX = document.querySelector('#x');
 
-closeX.addEventListener('click', ()=>{
+closeX.addEventListener('click', () => {
     menuPanel.classList.remove('active');
 })
 
@@ -62,3 +62,55 @@ document.addEventListener('click', () => {
     /* console.log(currentImageIndex); - kontrollime*/
 })
 
+
+// MODAL:
+
+const modal = document.querySelector('.modal');
+const btnOpenModal = document.querySelector('#btn-open-form');
+
+btnOpenModal.addEventListener('click', () => {
+    modal.style.display = 'block'; /*css-s on display none, nüüd vaja nähtavaks teha!*/
+})
+
+window.onclick = (event) => {
+    /*console.log(event.target) - kontrollime kas töötab */
+    if (event.target == modal) { /* kui klikk on modalil, mitte form-il */
+        modal.style.display = 'none';
+    }
+}
+
+/* PS: aga saab ka nii, et kontrollime, et kui on click ei ole form-il, siis display none*/
+
+
+
+// LOCAL STORAGE - ANDMED:
+
+const inputName = document.querySelector('#name');
+const inputEmail = document.querySelector('#email');
+const inputMessage = document.querySelector('#message');
+const contactForm = document.querySelector('#contact-form')
+
+contactForm.addEventListener('submit', (event) => {
+    /* alert('form submitted'); - kontrollime kas töötab*/
+    event.preventDefault(); /*takista vaikimisi käitumist ehk btn vajutamisel leht ei värskenda ennast automaatselt */
+    
+    const name = inputName.value; /* salvestame väärtused, mis on sisestatud input väljale*/
+    const email = inputEmail.value;
+    const message = inputMessage.value;
+
+    //OBJECT LITERAL - saame salvestada key-value formaadis objekt*/
+    const formData = {
+        userName: name,/* userName on key*/
+        userEmail: email,
+        userMessage: message
+    }
+
+    /*'formData' on täny''märkidele nimi ehk key, JSON...on objekt */
+   /*localStorage.setItem('formData', JSON.stringify(formData)); -  muundab input value-d JSON formaadiks */
+   localStorage.setItem('name', JSON.stringify(formData.userName));
+   localStorage.setItem('email', JSON.stringify(formData.userEmail));
+   localStorage.setItem('message', JSON.stringify(formData.userMessage));
+
+   console.log('form submitted'); /*näeme mis andmed salvestab consol-is */
+
+})
