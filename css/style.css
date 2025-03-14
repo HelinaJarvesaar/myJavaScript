@@ -44,7 +44,6 @@ body{
 
 
 
-
 .menu-panel {
     position: absolute;
     /*nüüd ei ole menüül kindlat asukohta*/
@@ -61,6 +60,15 @@ body{
     /*et padding kasti suuremaks ei teeks*/
     padding: 122px 33px 79px 33px;
     transition: right 0.3s ease-in-out;
+}
+
+
+.menu-panel img{
+    width: 40px;
+    height: 35px;
+    position: absolute; 
+    top: 33px; 
+    right: 33px; 
 }
 
 .menu-panel ul {

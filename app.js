@@ -36,6 +36,12 @@ menuLinks.forEach((link) => { // käime läbi kõik lingid mis asuvad menuLinks 
     })
 })
 
+const closeX = document.querySelector('#x');
+
+closeX.addEventListener('click', ()=>{
+    menuPanel.classList.remove('active');
+})
+
 
 // KARUSSELL:
 
